@@ -15,5 +15,9 @@ TodosThree.SHOWING_APP = SC.State.design({
       });
       view.set('value', '');
     }
+  },
+
+  clearCompletedTodos: function () {
+    TodosThree.completedTodosController.invoke('destroy');
   }
 });

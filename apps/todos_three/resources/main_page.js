@@ -11,7 +11,7 @@ TodosThree.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'newTodoField todosList'.w(),
+    childViews: 'newTodoField todosList footer'.w(),
     defaultResponder: 'TodosThree.statechart',
 
     newTodoField: SC.View.design({
@@ -30,11 +30,21 @@ TodosThree.mainPage = SC.Page.design({
     }),
 
     todosList: SC.ListView.design({
-      layout: { centerX: 0, width: 500, top: 36, bottom: 0 },
+      layout: { centerX: 0, width: 500, top: 36, bottom: 36 },
       contentBinding: SC.Binding.oneWay('TodosThree.todosController'),
       exampleView: SC.CheckboxView.design({
         valueBinding: '.content.isCompleted',
         titleBinding: SC.Binding.oneWay('.content.title')
+      })
+    }),
+
+    footer: SC.ToolbarView.design({
+      layout: { centerX: 0, width: 500, bottom: 0, height: 36 },
+      childViews: 'clearCompletedTodos'.w(),
+      clearCompletedTodos: SC.ButtonView.design({
+        layout: { centerY: 0, height: 24, right: 12, width: 150, zIndex: 100 },
+        title: 'Clear completed todos',
+        action: 'clearCompletedTodos'
       })
     })
   })
