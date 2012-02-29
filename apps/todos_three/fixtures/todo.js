@@ -4,6 +4,6 @@ TodosThree.Todo.FIXTURES = [
  {
    guid: 0,
    title: "Write Todo application",
-   isCompleted: NO
+   isCompleted: YES
  }
 ];
