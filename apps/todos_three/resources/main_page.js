@@ -44,7 +44,8 @@ TodosThree.mainPage = SC.Page.design({
       }),
 
       button: SC.ButtonView.design(SC.AutoResize, {
-        layout: { centerY: 0, height: 24, right: 12, zIndex: 100 },
+        controlSize: SC.HUGE_CONTROL_SIZE,
+        layout: { centerY: 0, height: 30, right: 12, zIndex: 100 },
         title: 'Add',
         action: 'addTodo',
         valueBinding: '.parentView.field.value',
@@ -67,7 +68,8 @@ TodosThree.mainPage = SC.Page.design({
       layout: { centerX: 0, width: 500, bottom: 0, height: 36 },
       childViews: 'clearCompletedTodos'.w(),
       clearCompletedTodos: SC.ButtonView.design(SC.AutoResize, {
-        layout: { centerY: 0, height: 24, right: 12, zIndex: 100 },
+        controlSize: SC.HUGE_CONTROL_SIZE,
+        layout: { centerY: 0, height: 30, right: 12, zIndex: 100 },
         isEnabledBinding: SC.Binding.oneWay('TodosThree.completedTodosController.length').bool(),
         title: 'Clear completed todos',
         action: 'clearCompletedTodos'
