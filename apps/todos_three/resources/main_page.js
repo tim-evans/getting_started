@@ -18,7 +18,8 @@ TodosThree.mainPage = SC.Page.design({
       layout: { centerX: 0, width: 500, top: 0, height: 36 },
 
       childViews: 'title areAllCompleted'.w(),
-      areAllCompleted: SC.CheckboxView.design({
+      areAllCompleted: SC.CheckboxView.design(SC.AutoResize, {
+        autoResizePadding: { width: 47 },
         title: 'Mark all as done',
         valueBinding: 'TodosThree.todosController.areAllCompleted'
       }),
@@ -40,8 +41,8 @@ TodosThree.mainPage = SC.Page.design({
 
       field: SC.TextFieldView.design(),
 
-      button: SC.ButtonView.design({
-        layout: { centerY: 0, height: 24, right: 12, width: 70, zIndex: 100 },
+      button: SC.ButtonView.design(SC.AutoResize, {
+        layout: { centerY: 0, height: 24, right: 12, zIndex: 100 },
         title: 'Add',
         action: 'addTodo',
         valueBinding: '.parentView.field.value',
@@ -63,8 +64,8 @@ TodosThree.mainPage = SC.Page.design({
     footer: SC.ToolbarView.design({
       layout: { centerX: 0, width: 500, bottom: 0, height: 36 },
       childViews: 'clearCompletedTodos'.w(),
-      clearCompletedTodos: SC.ButtonView.design({
-        layout: { centerY: 0, height: 24, right: 12, width: 150, zIndex: 100 },
+      clearCompletedTodos: SC.ButtonView.design(SC.AutoResize, {
+        layout: { centerY: 0, height: 24, right: 12, zIndex: 100 },
         isEnabledBinding: SC.Binding.oneWay('TodosThree.completedTodosController.length').bool(),
         title: 'Clear completed todos',
         action: 'clearCompletedTodos'
