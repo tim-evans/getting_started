@@ -1,0 +1,11 @@
+$theme.sc-text-field-view { 
+  font-size: 14px;
+  .hint {
+    font-size: 14px;
+    line-height: 30px;
+  }
+ 
+  .padding { 
+    left: 14px;
+  }
+}
