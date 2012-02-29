@@ -6,6 +6,11 @@ TodosTwo.ReadyState = SC.State.extend({
 
   exitState: function() {
     TodosTwo.getPath('mainPage.mainPane').remove();
+  },
+
+  // Prove that we are rolling!
+  proveIt: function (someParam) {
+    alert(someParam);
   }
 
 });
