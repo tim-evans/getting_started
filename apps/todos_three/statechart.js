@@ -1,8 +1,12 @@
 TodosThree.statechart = SC.Statechart.create({
 
-  initialState: 'readyState',
-  
-  readyState: SC.State.plugin('TodosThree.ReadyState'),
-  // someOtherState: SC.State.plugin('TodosThree.SomeOtherState')
+  rootState: SC.State.design({
+    initialSubstate: "STARTING",
 
+    STARTING: SC.State.plugin("TodosThree.STARTING"),
+
+    LOADING_DATA: SC.State.plugin("TodosThree.LOADING_DATA"),
+
+    SHOWING_APP: SC.State.plugin("TodosThree.SHOWING_APP")
+  })
 });
