@@ -39,7 +39,9 @@ TodosThree.mainPage = SC.Page.design({
       layout: { centerX: 0, width: 500, top: 36, height: 36 },
       childViews: 'field button'.w(),
 
-      field: SC.TextFieldView.design(),
+      field: SC.TextFieldView.design({
+        hint: 'What needs to be done?'
+      }),
 
       button: SC.ButtonView.design(SC.AutoResize, {
         layout: { centerY: 0, height: 24, right: 12, zIndex: 100 },
