@@ -49,12 +49,14 @@ TodosThree.mainPage = SC.Page.design({
       })
     }),
 
-    todosList: SC.ListView.design({
+    todosList: SC.ScrollView.design({
       layout: { centerX: 0, width: 500, top: 72, bottom: 36 },
-      contentBinding: SC.Binding.oneWay('TodosThree.todosController'),
-      exampleView: SC.CheckboxView.design({
-        valueBinding: '.content.isCompleted',
-        titleBinding: SC.Binding.oneWay('.content.title')
+      contentView: SC.ListView.design({
+        contentBinding: SC.Binding.oneWay('TodosThree.todosController'),
+        exampleView: SC.CheckboxView.design({
+          valueBinding: '.content.isCompleted',
+          titleBinding: SC.Binding.oneWay('.content.title')
+        })
       })
     }),
 
