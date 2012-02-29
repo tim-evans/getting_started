@@ -11,13 +11,20 @@ TodosTwo.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'labelView'.w(),
+    childViews: 'labelView labelView2'.w(),
     
     labelView: SC.LabelView.design({
       layout: { centerX: 0, centerY: 0, width: 200, height: 18 },
       textAlign: SC.ALIGN_CENTER,
       tagName: "h1", 
       value: "Welcome to SproutCore!"
+    }),
+
+    labelView2: SC.LabelView.design({
+      layout: { centerX: 0, centerY: 15, width: 200, height: 18 },
+      textAlign: SC.ALIGN_CENTER,
+      tagName: "h1",
+      value: "Now we're rolling!"
     })
   })
 
