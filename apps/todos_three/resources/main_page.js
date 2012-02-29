@@ -17,10 +17,20 @@ TodosThree.mainPage = SC.Page.design({
     header: SC.ToolbarView.design({
       layout: { centerX: 0, width: 500, top: 0, height: 36 },
 
-      childViews: 'areAllCompleted'.w(),
+      childViews: 'title areAllCompleted'.w(),
       areAllCompleted: SC.CheckboxView.design({
         title: 'Mark all as done',
         valueBinding: 'TodosThree.todosController.areAllCompleted'
+      }),
+
+      title: SC.LabelView.design({
+        totalTodosBinding: SC.Binding.oneWay('TodosThree.todosController.length'),
+        completedTodosBinding: SC.Binding.oneWay('TodosThree.completedTodosController.length'),
+        textAlign: SC.ALIGN_RIGHT,
+
+        value: function () {
+          return 'TodosThree (' + (this.get('totalTodos') - this.get('completedTodos')) + ')';
+        }.property('totalTodos', 'completedTodos').cacheable()
       })
     }),
 
