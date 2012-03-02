@@ -1,6 +1,7 @@
 TodosThree.SHOWING_APP = SC.State.design({
   enterState: function () {
     TodosThree.getPath('mainPage.mainPane').append();
+    TodosThree.get('field').becomeFirstResponder();
   },
 
   exitState: function () {},
