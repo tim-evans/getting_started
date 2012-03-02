@@ -49,8 +49,8 @@ TodosThree.mainPage = SC.Page.design({
         layout: { centerY: 0, height: 30, right: 12, zIndex: 100 },
         title: 'Add',
         action: 'addTodo',
-        valueBinding: '.parentView.field.value',
-        isDefaultBinding: SC.Binding.oneWay('.parentView.field.focused')
+        valueBinding: '.page.field.value',
+        isDefaultBinding: SC.Binding.oneWay('.page.field.focused')
       })
     }),
 

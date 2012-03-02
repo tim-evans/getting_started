@@ -6,11 +6,17 @@ TodosThree.STARTING = SC.State.extend({
 
     TodosThree.completedTodosController.set('content',
       TodosThree.store.find(SC.Query.local(TodosThree.Todo, 'isCompleted = YES')));
+
+    if (TodosThree.todosController.get('status') === SC.Record.READY_CLEAN) {
+      this.didLoad();
+    }
   },
 
   didLoad: function () {
-    this.gotoState('SHOWING_APP');
-  }.stateObserves('TodosThree.todosController*content.status'),
+    if (TodosThree.todosController.get('status') === SC.Record.READY_CLEAN) {
+      this.gotoState('SHOWING_APP');
+    }
+  }.stateObserves('TodosThree.todosController.status'),
 
   exitState: function () {
     // Nothing to worry about here

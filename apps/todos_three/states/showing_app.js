@@ -1,7 +1,7 @@
 TodosThree.SHOWING_APP = SC.State.design({
   enterState: function () {
-    TodosThree.getPath('mainPage.mainPane').append();
-    TodosThree.get('field').becomeFirstResponder();
+    TodosThree.mainPage.get('mainPane').append();
+    TodosThree.mainPage.get('field').becomeFirstResponder();
   },
 
   exitState: function () {},
@@ -11,7 +11,7 @@ TodosThree.SHOWING_APP = SC.State.design({
 
     if (todo !== '') {
       TodosThree.store.createRecord(TodosThree.Todo, {
-        title: view.get('value'),
+        title: todo,
         timestamp: SC.DateTime.create()
       });
       view.set('value', '');
