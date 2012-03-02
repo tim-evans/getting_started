@@ -1,3 +1,5 @@
+$theme: '.ace.todos-three';
+
 body { 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
